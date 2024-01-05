@@ -41,15 +41,34 @@
 // }
 // console.log(`Sonuç: ${result}`);
 
-let number = "370";
-let result = 0;
-for (let i = 0; i < number.length; i++) {
-    let numberIndex = number.charAt(i);
-    let cube = numberIndex * numberIndex * numberIndex;
-    result += cube;
+// let number = "370";
+// let result = 0;
+// for (let i = 0; i < number.length; i++) {
+//     let numberIndex = number.charAt(i);
+//     let cube = numberIndex * numberIndex * numberIndex;
+//     result += cube;
+// }
+// if (result == number) {
+//     console.log(`${number} sayısı bir armstrong sayıdır`);
+// } else {
+//     console.log(`${number} sayısı bir armstrong sayı değildir`);
+// }
+
+let words = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+function findLetter(letter) {
+    let counter = 0;
+    for (let i = 0; i < words.length; i++) {
+        if (words.charAt(i).toLowerCase() === letter.toLowerCase()) {
+            counter += 1;
+        }
+    }
+    if (counter > 0) {
+        return `"${letter}" harfi cümle de ${counter} kere geçmektedir.`;
+    } else {
+        return `"${letter}" harfi cümle de hiç geçmemektedir.`;
+    }
 }
-if (result == number) {
-    console.log(`${number} sayısı bir armstrong sayıdır`);
-} else {
-    console.log(`${number} sayısı bir armstrong sayı değildir`);
-}
+
+let result = findLetter("w");
+console.log(result);
