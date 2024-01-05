@@ -10,9 +10,26 @@
 //     alert("Kaldınız");
 // }
 
-for (let first = 1; first <= 10; first++) {
-    for (let second = 1; second <= 10; second++) {
-        console.log(`${first}x${second}=${first * second}`);
+// for (let first = 1; first <= 10; first++) {
+//     for (let second = 1; second <= 10; second++) {
+//         for (let third = 1; third <= 10; third++)
+//             console.log(
+//                 `${first}x${second}x${third}=${first * second * third}`
+//             );
+//     }
+//     console.log("-----------------------");
+// }
+
+let number = Number(79);
+let result = true;
+for (let i = 2; i <= Math.floor(number / 2); i++) {
+    if (number % i == 0) {
+        result = false;
+        break;
     }
-    console.log("-----------------------");
+}
+if (result) {
+    console.log(`${number} asal bir sayıdır`);
+} else {
+    console.log(`${number} asal bir sayı değildir!`);
 }
