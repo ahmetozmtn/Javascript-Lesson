@@ -20,16 +20,36 @@
 //     console.log("-----------------------");
 // }
 
-let number = Number(79);
-let result = true;
-for (let i = 2; i <= Math.floor(number / 2); i++) {
-    if (number % i == 0) {
-        result = false;
-        break;
-    }
+// let number = Number(79);
+// let result = true;
+// for (let i = 2; i <= Math.floor(number / 2); i++) {
+//     if (number % i == 0) {
+//         result = false;
+//         break;
+//     }
+// }
+// if (result) {
+//     console.log(`${number} asal bir sayıdır`);
+// } else {
+//     console.log(`${number} asal bir sayı değildir!`);
+// }
+
+// let number = Number(6);
+// let result = 1;
+// for (let i = 1; i <= number; i++) {
+//     result = result * i;
+// }
+// console.log(`Sonuç: ${result}`);
+
+let number = "370";
+let result = 0;
+for (let i = 0; i < number.length; i++) {
+    let numberIndex = number.charAt(i);
+    let sqrt = numberIndex * numberIndex * numberIndex;
+    result += sqrt;
 }
-if (result) {
-    console.log(`${number} asal bir sayıdır`);
+if (result == number) {
+    console.log(`${number} sayısı bir armstrong sayıdır`);
 } else {
-    console.log(`${number} asal bir sayı değildir!`);
+    console.log(`${number} sayısı bir armstrong sayı değildir`);
 }
