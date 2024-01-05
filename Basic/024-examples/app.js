@@ -45,8 +45,8 @@ let number = "370";
 let result = 0;
 for (let i = 0; i < number.length; i++) {
     let numberIndex = number.charAt(i);
-    let sqrt = numberIndex * numberIndex * numberIndex;
-    result += sqrt;
+    let cube = numberIndex * numberIndex * numberIndex;
+    result += cube;
 }
 if (result == number) {
     console.log(`${number} sayısı bir armstrong sayıdır`);
