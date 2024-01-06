@@ -54,21 +54,82 @@
 //     console.log(`${number} sayısı bir armstrong sayı değildir`);
 // }
 
-let words = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+// let words = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
-function findLetter(letter) {
-    let counter = 0;
-    for (let i = 0; i < words.length; i++) {
-        if (words.charAt(i).toLowerCase() === letter.toLowerCase()) {
-            counter += 1;
+// function findLetter(letter) {
+//     let counter = 0;
+//     for (let i = 0; i < words.length; i++) {
+//         if (words.charAt(i).toLowerCase() === letter.toLowerCase()) {
+//             counter += 1;
+//         }
+//     }
+//     if (counter > 0) {
+//         return `"${letter}" harfi cümle de ${counter} kere geçmektedir.`;
+//     } else {
+//         return `"${letter}" harfi cümle de hiç geçmemektedir.`;
+//     }
+// }
+
+// let result = findLetter("w");
+// console.log(result);
+
+//Mükemmel sayı bulma //
+
+// function isPerfectNumber(number) {
+//     let total = 0;
+//     for (let i = 2; i <= number / 2; i++) {
+//         if (number % i == 0) {
+//             total += i;
+//         }
+//     }
+//     total += 1 + number;
+
+//     if (total == number * 2) {
+//         console.log(` ${number} sayısı bir mükemmel sayıdır.`);
+//     } else {
+//         console.log(` ${number} sayısı bir mükemmel sayı değildir.`);
+//     }
+// }
+
+// isPerfectNumber(30);
+
+// Decimal to Binary Conversion //
+
+function convertDecimalToBinary(number) {
+    let binary = "";
+    while (true) {
+        binary += (number % 2).toString();
+        number = Math.floor(number / 2);
+        if (number == 1) {
+            binary += number.toString();
+            // döngüden çıkıyoruz
+            break;
         }
     }
-    if (counter > 0) {
-        return `"${letter}" harfi cümle de ${counter} kere geçmektedir.`;
-    } else {
-        return `"${letter}" harfi cümle de hiç geçmemektedir.`;
-    }
+    let result = binary.split("").reverse().join("");
+    console.log(`Sonuç: ${result}`);
+    return result;
 }
 
-let result = findLetter("w");
-console.log(result);
+convertDecimalToBinary(150);
+
+// Binary to Decimal Conversion //
+
+let binary = "1011";
+function convertBinaryToDecimal(binary) {
+    let counter = 0;
+    let total = 0;
+    for (let i = binary.length - 1; i >= 0; i--) {
+        total += Number(binary.charAt(i)) * Math.pow(2, counter);
+        counter++;
+    }
+    console.log(`Sonuç: ${total}`);
+}
+
+convertBinaryToDecimal(binary);
+
+function convertDecimalToBinary1(number) {
+    return number.toString(2);
+}
+
+console.log(convertDecimalToBinary1(150));
