@@ -36,7 +36,7 @@ for (let task of taskList) {
 
 // document.querySelector("#task-list").removeAttribute("class");  // class attribute siler
 // document.querySelector("#task-list").children[1].removeAttribute("class");
-// document.querySelector("#task-list").children[1].setAttribute("class", "aaa"); // elementin classlarını getirir.
+// document.querySelector("#task-list").children[1].setAttribute("class", "aaa"); // attribute set etmemizi sağlar
 result = document.querySelector("#task-list").children[1].classList[0];
 result = document
     .querySelector("#task-list")
