@@ -48,6 +48,12 @@ function handleOperator(nextOperator) {
     if (firstValue === null) {
         firstValue = value;
     } else if (operator) {
+        if (value === 0 && operator === "/") {
+            // Sıfıra bölme durumu kontrolü
+            alert("Bir sayıyı 0'a bölemezsiniz.");
+            clear();
+            return;
+        }
         const result = calculate(firstValue, value, operator);
         displayValue = `${parseFloat(result.toFixed(7))}`;
         firstValue = result;
@@ -67,6 +73,7 @@ function calculate(first, second, operator) {
     } else if (operator === "/") {
         return first / second;
     }
+
     return second;
 }
 
