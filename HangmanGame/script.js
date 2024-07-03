@@ -1,10 +1,14 @@
 const wordElement = document.getElementById("word");
 const popup = document.getElementById("popup-container");
 const messageElement = document.getElementById("success-message");
+const wrongLettersElement = document.getElementById("wrong-letters");
+const items = document.querySelectorAll(".item");
+const message = document.getElementById("message");
+const playAgain = document.getElementById("play-again");
 
 const correctLetters = ["h", "t", "m", "l", "o", "e"];
 const wrongLetters = [];
-const selectedWord = getRandomWord();
+let selectedWord = getRandomWord();
 
 function getRandomWord() {
     const words = [
@@ -41,6 +45,43 @@ function displayWord() {
     }
 }
 
+function updateWrongLetters() {
+    wrongLettersElement.innerHTML = `
+        ${wrongLetters.length > 0 ? "<h3>Hatalı harfler</h3>" : ""}
+        ${wrongLetters.map((letter) => `<span>${letter}</span>`)}
+    `;
+
+    items.forEach((item, index) => {
+        const errorCount = wrongLetters.length;
+
+        if (index < errorCount) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+    if (wrongLetters.length === items.length) {
+        popup.style.display = "flex";
+        messageElement.innerText = "You Lost!";
+    }
+}
+
+function displayMessage() {
+    message.classList.add("show");
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 1000);
+}
+
+playAgain.addEventListener("click", () => {
+    correctLetters.length = 0;
+    wrongLetters.length = 0;
+    selectedWord = getRandomWord();
+    displayWord();
+    updateWrongLetters();
+    popup.style.display = "none";
+});
+
 window.addEventListener("keydown", (e) => {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key;
@@ -50,12 +91,14 @@ window.addEventListener("keydown", (e) => {
                 correctLetters.push(letter);
                 displayWord();
             } else {
-                console.log("bu harfi zaten kullandınız");
+                displayMessage();
             }
         } else {
             if (!wrongLetters.includes(letter)) {
                 wrongLetters.push(letter);
-                console.log("hatalı harfleri güncelle");
+                updateWrongLetters();
+            } else {
+                displayMessage();
             }
         }
     }
