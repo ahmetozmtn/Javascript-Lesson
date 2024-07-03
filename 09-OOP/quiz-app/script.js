@@ -32,10 +32,11 @@ function Question(quizText, answers, correctAnswer) {
     this.quizText = quizText;
     this.answers = answers;
     this.correctAnswer = correctAnswer;
-    this.checkAnswer = function (answer) {
-        return answer == this.correctAnswer;
-    };
 }
+
+Question.checkAnswer = function (answer) {
+    return answer == this.correctAnswer;
+};
 
 let question1 = new Question(
     "JS paket yönetim sistemi nedir?",
