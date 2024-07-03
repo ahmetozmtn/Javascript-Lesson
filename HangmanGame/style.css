@@ -35,11 +35,36 @@ body {
     right: 30px;
 }
 
+#popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background-color: #3a444e;
+    padding: 20px;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 15px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
 #word {
     display: flex;
     position: absolute;
     bottom: 10px;
     left: 50%;
+    transform: translateX(-50%);
 }
 
 .letter {
