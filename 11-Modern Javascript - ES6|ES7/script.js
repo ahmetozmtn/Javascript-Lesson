@@ -75,8 +75,31 @@
 
 // sum(1, 2, 3, 4, 5);
 
-function showInfo(name, age, ...country) {
-    console.log(name, age, country);
+// function showInfo(name, age, ...country) {
+//     console.log(name, age, country);
+// }
+
+// showInfo("Andrian", 25, "Turkey", "USA", "Germany");
+
+// Array Destructuring
+
+let userInfo = ["Andrian", "Burn", 25, "Turkey", "Istanbul", "56789"];
+
+let [firstName, lastName, age, ...address] = userInfo;
+
+console.log(firstName, lastName, age, address);
+
+// Object Destructuring
+
+let product = {
+    brand: "Apple",
+    model: "Iphone 15",
+    price: 60000,
+};
+
+function showProduct(obj) {
+    let { brand, model, price = 0, isSelling = false } = obj;
+    console.log(brand, model, price, isSelling);
 }
 
-showInfo("Andrian", 25, "Turkey", "USA", "Germany");
+showProduct(product);
