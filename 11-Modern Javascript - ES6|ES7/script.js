@@ -83,23 +83,23 @@
 
 // Array Destructuring
 
-let userInfo = ["Andrian", "Burn", 25, "Turkey", "Istanbul", "56789"];
+// let userInfo = ["Andrian", "Burn", 25, "Turkey", "Istanbul", "56789"];
 
-let [firstName, lastName, age, ...address] = userInfo;
+// let [firstName, lastName, age, ...address] = userInfo;
 
-console.log(firstName, lastName, age, address);
+// console.log(firstName, lastName, age, address);
 
-// Object Destructuring
+// // Object Destructuring
 
-let product = {
-    brand: "Apple",
-    model: "Iphone 15",
-    price: 60000,
-};
+// let product = {
+//     brand: "Apple",
+//     model: "Iphone 15",
+//     price: 60000,
+// };
 
-function showProduct(obj) {
-    let { brand, model, price = 0, isSelling = false } = obj;
-    console.log(brand, model, price, isSelling);
-}
+// function showProduct(obj) {
+//     let { brand, model, price = 0, isSelling = false } = obj;
+//     console.log(brand, model, price, isSelling);
+// }
 
-showProduct(product);
+// showProduct(product);
