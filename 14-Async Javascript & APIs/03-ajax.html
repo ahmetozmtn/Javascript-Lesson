@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const request = new XMLHttpRequest();
+
+            request.open("GET", "https://restcountries.com/v3.1/name/turkey");
+            request.send();
+
+            // async
+
+            request.addEventListener("load", () => {
+                const data = JSON.parse(request.responseText);
+                console.log(data[0].name.official);
+                console.log(typeof data);
+            });
+        </script>
+    </body>
+</html>
