@@ -1,6 +1,5 @@
 const quiz = new Quiz(questions);
 const ui = new UI();
-
 ui.btn_start.addEventListener("click", function () {
     ui.quiz_box.classList.add("active");
     clearInterval(counter);

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // console.log("start");
+
+            // const serverStatus = true;
+            // const login = (username, password, successFn, errorFn) => {
+            //     setTimeout(() => {
+            //         if (serverStatus) {
+            //             successFn({
+            //                 username: username,
+            //                 email: "info@info.com",
+            //             });
+            //         } else {
+            //             errorFn("Server is down");
+            //         }
+            //     }, 1000);
+            // };
+
+            // const getPostsByUsername = (username, successFn) => {
+            //     setTimeout(() => {
+            //         successFn(["Post 1", "Post 2"]);
+            //     }, 1000);
+            // };
+
+            // const getPostDetails = (post, successFn) => {
+            //     setTimeout(() => {
+            //         successFn("Post Details");
+            //     }, 1000);
+            // };
+
+            // login(
+            //     "john",
+            //     "1234",
+            //     (user) => {
+            //         console.log(user.username);
+            //         console.log(user.email);
+
+            //         getPostsByUsername(user.username, (posts) => {
+            //             console.log(posts);
+
+            //             getPostDetails(posts[0], (details) => {
+            //                 console.log(details);
+            //             });
+            //         });
+            //     },
+            //     (msg) => {
+            //         console.log(msg);
+            //     }
+            // );
+
+            // console.log("end");
+
+            const serverStatus = true;
+            const username = "ahmet";
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (serverStatus) {
+                        resolve(`is logged in ${username}`);
+                    } else {
+                        reject("login failed");
+                    }
+                }, 2000);
+            });
+
+            promise
+                .then((msg) => {
+                    console.log(msg);
+                })
+                .catch((msg) => {
+                    console.log(msg);
+                });
+        </script>
+    </body>
+</html>
